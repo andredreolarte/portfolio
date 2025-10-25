@@ -1,0 +1,201 @@
+ /* - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - IMPORT - - - - - - - - - - - - - - - - - -  */
+@import url("reset.css");
+@import url("utility.css");
+
+
+
+
+ /* - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - TYPOGRAPHIE - - - - - - - - - - - - - - - - */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{ font-family: "Public Sans", sans-serif; }
+
+h1{ 
+	font-size: 12vw;
+}
+h2{
+	text-align: center;
+	max-width: 25ch;
+}
+
+
+
+
+ /* - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - COLOR - - - - - - - - - - - - - - - - - - - */
+html{
+	color-scheme: dark;
+}
+body { 
+	background-color: #4e3169;
+	color: white;
+}
+
+a { color: inherit; }
+
+
+
+
+ /* - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - UI/UX - - - - - - - - - - - - - - - - - - - */
+html {
+	scroll-behavior: smooth;
+}
+
+*:has(.topNav){ position: relative; }
+a.topNav{
+	font-size: 1rem;
+	position: absolute;
+	right: 2rem;
+	top: -2.5rem;
+	z-index: 99;
+}
+/* section{ padding-top: 3rem; } */
+
+nav {
+	position: sticky;
+	top: 0;
+	z-index: 99;
+}
+
+.active { background-color: #0009; }
+
+
+
+
+ /* - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - MISE EN PAGE - - - - - - - - - - - - - - -  */
+
+body{
+	padding: 0 1rem;
+}
+
+header .hero { 
+	height: calc(100vh - 3rem);
+}
+
+nav { 
+	height: 3rem;
+	justify-content: center;
+}
+
+
+
+
+
+
+section{
+	padding-top: 3rem;
+	min-height: 100vh;
+	position: relative;
+}
+section:before{
+	display: block;
+	content: "";
+	border-top: 1px solid white;
+}
+
+
+
+
+ /* - - - - - - - - - - - - - - - - - - - - - - - - */
+/* - - MODULES - - - - - - - - - - - - - - - - - - */
+
+nav{
+	background-color: #0003;
+	display: flex;
+	width: 100%;
+}
+nav a {
+	padding: 1rem;
+}
+
+nav a:hover{
+	background-color: #0006;
+}
+
+
+/* .hero */
+
+.hero {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hero .image,
+.hero .texte{ }
+
+.hero .image { 
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+}
+.hero .image img,
+.hero .image video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.hero .texte {
+	padding:2rem;
+	/* color: #4e3169; */
+	background-color: #0005;
+	z-index: 2;
+}
+
+
+/* Gallery */
+.gallery {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat( auto-fill, minmax(min(15rem, 100%), 1fr) );
+	grid-auto-rows: 1fr;
+}
+
+
+
+/* //////////////////////////////// */
+/* Page Projet */
+
+.projectPage{}
+
+.projectPage{
+	background-color: rgb(77, 33, 115);
+}
+
+nav h1 {
+	font-size: 1.3rem
+}
+
+nav.pageNav{ }
+
+
+.projectPage main {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem
+	max-width: 30rem;
+	margin: auto;
+}
+
+
+
+.projectPage p {
+	color: white;
+}
+
+
+.heroImage img {
+	max-height: 80vh;
+	object-fit: contain;
+	
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="projectPage">
+
+	<nav class="pageNav">
+		
+		<a href="index.html#Photo">home</a>
+	</nav>
+	
+	<main>
+
+		<div class="heroImage">
+			<a href="Franz_Kafka_1917.jpg" data-lightbox="kafka">
+				<img src="Franz_Kafka_1917.jpg" alt="">
+			</a>
+		</div><!-- .heroImage -->
+
+
+		<div class="description row">
+			<div class="col">
+				<h3>Projet Andrea</h3>
+				<p>Projet d'affiche pour le livre "Metamorphose</p>
+			</div>
+			<div class="col">
+				<p>travail photoshop et compositon</p>
+			</div>
+			<div class="col">
+				<p> Pour un projet de première année, nous devions créer une affiche. J’ai choisi de la faire sur le livre La Métamorphose de Franz Kafka.</p>
+			</div>
+		</div>
+		<!-- .description -->
+
+
+		<div class="gallery">
+			<div><a href="chaton_big.jpg" data-lightbox="kafka"><img src="chaton_icon.jpg" alt=""></a></div>
+			<div><a href="chaton_big.jpg" data-lightbox="kafka"><img src="chaton_icon.jpg" alt=""></a></div>
+			<div><a href="chaton_big.jpg" data-lightbox="kafka"><img src="chaton_icon.jpg" alt=""></a></div>
+			<div><a href="chaton_big.jpg" data-lightbox="kafka"><img src="chaton_icon.jpg" alt=""></a></div>
+		</div><!-- /.gallery -->
+
+	</main>
+
+
+
+
+	<script>
+		//https://www.geeksforgeeks.org/javascript/scrollspy-using-html-css-and-javascript/
+		//https://github.com/kristijan-pajtasev/SimpleScrollSpy/blob/master/scrollspy.js
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const navbarLinks = document.querySelectorAll('.navMenu-item'); // ← ← ← <a class="navMenu-item"
+			const sections = document.querySelectorAll('.navItem'); // ← ← ← <section class="navItem"
+			const scrollSpyOffset = 300; // scroll offset until 'active'
+
+			window.addEventListener('scroll', function () {
+				const currentPos = window.scrollY;
+
+				sections.forEach(function (section) {
+					const sectionTop = section.offsetTop;
+					const sectionHeight = section.offsetHeight;
+					const sectionId = section.getAttribute('id');
+
+					if (currentPos - scrollSpyOffset >= sectionTop && currentPos < sectionTop + sectionHeight) {
+						navbarLinks.forEach(function (navbarLink) {
+							navbarLink.classList.remove('active');
+						});	
+						//	nav id="#navMenu" ↓ ↓ ↓
+						document.querySelector('#navMenu a[href="#' + sectionId + '"]').classList.add('active');
+					}
+				});
+			});
+		});
+	</script>
+<link href="lightbox/css/lightbox.css" rel="stylesheet" />
+<script src="lightbox/js/lightbox-plus-jquery.js"></script>
+
+</body>
+</html>

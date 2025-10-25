@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Andrea</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<header id="top">
+
+		<div class="hero">
+
+			<div class="image">
+				<!-- <img src="chaton_icon.jpg" alt=""> -->
+				 <video src="intro.mp4" autoplay muted loop></video>
+			</div><!-- .image -->
+
+			<div class="texte">
+				<h1>Andrea Olarte </h1>
+				<p></p>
+				
+				
+			</div><!-- .texte -->
+
+		</div><!-- .hero -->
+       
+		</div>
+		
+	</header>
+
+	<nav id="navMenu">
+		<a href="#About" class="navMenu-item">About</a>
+		<a href="#Video" class="navMenu-item">Video</a>
+		<a href="#Animation" class="navMenu-item">Animation</a>
+		<a href="#Dessin" class="navMenu-item">Dessin</a>
+		<a href="#Photo" class="navMenu-item">Photo</a>
+	</nav>
+
+
+	<main>
+
+		<section id="About">
+			<div class="row">
+				<p>Actuellement élève en Interactive Media Designer à l'ERACOM, </p>
+				<p>voir mon CV</p>
+				<p>contact: …</p>
+			</div>
+		</section>
+
+		<section id="Video" class="navItem">
+			<h1>Video</h1>
+				
+			<a href="#top" class="topNav">↑</a>
+				
+			<div class="gallery">
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+			</div><!-- /.gallery -->
+			
+			
+		</section>
+
+		<section id="Animation" class="navItem">
+			<h1>Animation
+				<a href="#top" class="topNav">↑</a>
+			</h1>
+
+			<div class="gallery">
+
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				
+			</div><!-- /.gallery -->
+ 
+		</section>
+
+		<section id="Dessin" class="navItem">
+			<h1>Dessin
+				<a href="#top" class="topNav">↑</a>
+			</h1>
+			<div class="gallery">
+
+				<div><a href="page_PersonneDessin.html"><img src="Capture d’écran 2025-09-19 à 13.26.34.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				
+		</section>
+
+		<section id="Photo" class="navItem">
+			<h1>Photo
+				<a href="#top" class="topNav">↑</a>
+			</h1>
+
+			<div class="gallery">
+
+				<div><a href="Architecture_Abstraction_Andrea.Olarte copie.jpg"><img src="Architecture_Abstraction_Andrea.Olarte copie.jpg" alt=""></a></div>
+				<div><a href="page_kafka.html" _data-lightbox="bravo"><img src="Franz_Kafka_1917.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				<div><a href="chaton_big.jpg" data-lightbox="bravo"><img src="chaton_icon.jpg" alt=""></a></div>
+				
+			</div><!-- /.gallery -->
+
+			
+		</section>
+ 
+	</main>
+
+	<script>
+		//https://www.geeksforgeeks.org/javascript/scrollspy-using-html-css-and-javascript/
+		//https://github.com/kristijan-pajtasev/SimpleScrollSpy/blob/master/scrollspy.js
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const navbarLinks = document.querySelectorAll('.navMenu-item'); // ← ← ← <a class="navMenu-item"
+			const sections = document.querySelectorAll('.navItem'); // ← ← ← <section class="navItem"
+			const scrollSpyOffset = 300; // scroll offset until 'active'
+
+			window.addEventListener('scroll', function () {
+				const currentPos = window.scrollY;
+
+				sections.forEach(function (section) {
+					const sectionTop = section.offsetTop;
+					const sectionHeight = section.offsetHeight;
+					const sectionId = section.getAttribute('id');
+
+					if (currentPos - scrollSpyOffset >= sectionTop && currentPos < sectionTop + sectionHeight) {
+						navbarLinks.forEach(function (navbarLink) {
+							navbarLink.classList.remove('active');
+						});	
+						//	nav id="#navMenu" ↓ ↓ ↓
+						document.querySelector('#navMenu a[href="#' + sectionId + '"]').classList.add('active');
+					}
+				});
+			});
+		});
+	</script>
+<link href="lightbox/css/lightbox.css" rel="stylesheet" />
+<script src="lightbox/js/lightbox-plus-jquery.js"></script>
+
+</body>
+</html>
